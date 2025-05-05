@@ -4,11 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { useNavigate } from "react-router-dom"; // <-- Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 export default function ContactForm() {
   const { toast } = useToast();
-  const navigate = useNavigate(); // <-- Initialize navigate
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,21 +16,51 @@ export default function ContactForm() {
     message: ""
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Here you would typically send the data to your backend (or Formspree)
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/mldbblzy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message
+        })
+      });
 
-    setFormData({ name: "", email: "", company: "", message: "" });
+      const result = await response.json();
 
-    // Redirect to thank-you page after short delay (optional but looks smoother)
-    setTimeout(() => {
-      navigate("/thank-you");
-    }, 500); // 500ms delay so user sees toast
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        setFormData({ name: "", email: "", company: "", message: "" });
+
+        setTimeout(() => {
+          navigate("/thank-you");
+        }, 500);
+      } else {
+        toast({
+          title: "Error sending message",
+          description: result.error || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "Network error — please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
