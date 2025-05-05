@@ -1,6 +1,6 @@
-
 import React from "react";
 import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
 
 export default function TeamMemberCard({ member, index }) {
   return (
@@ -19,7 +19,16 @@ export default function TeamMemberCard({ member, index }) {
         <h3 className="text-xl font-bold">{member.name}</h3>
         <p className="text-primary mb-4">{member.role}</p>
       </div>
-      <p className="text-muted-foreground">{member.description}</p>
+      <p className="text-muted-foreground mb-4">{member.description}</p>
+
+      <a
+        href={member.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+      >
+        <Linkedin className="w-4 h-4" /> View LinkedIn
+      </a>
     </motion.div>
   );
 }
