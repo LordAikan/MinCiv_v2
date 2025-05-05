@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,14 +14,45 @@ export default function ContactForm() {
     message: ""
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setFormData({ name: "", email: "", company: "", message: "" });
+
+    // Prepare FormData for Formspree
+    const formPayload = new FormData();
+    formPayload.append("name", formData.name);
+    formPayload.append("email", formData.email);
+    formPayload.append("company", formData.company);
+    formPayload.append("message", formData.message);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mldbblzy", {
+        method: "POST",
+        body: formPayload,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: "There was an issue sending your message. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an issue sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
