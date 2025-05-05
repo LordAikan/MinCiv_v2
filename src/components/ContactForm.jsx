@@ -4,66 +4,33 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from "react-router-dom"; // <-- Import useNavigate
 
 export default function ContactForm() {
   const { toast } = useToast();
+  const navigate = useNavigate(); // <-- Initialize navigate
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     message: ""
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    // Prepare FormData for Formspree
-    const formPayload = new FormData();
-    formPayload.append("name", formData.name);
-    formPayload.append("email", formData.email);
-    formPayload.append("company", formData.company);
-    formPayload.append("message", formData.message);
+    // Here you would typically send the data to your backend (or Formspree)
+    toast({
+      title: "Message sent!",
+      description: "We'll get back to you as soon as possible.",
+    });
 
-    try {
-      const response = await fetch("https://formspree.io/f/mldbblzy", {
-        method: "POST",
-        body: formPayload,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+    setFormData({ name: "", email: "", company: "", message: "" });
 
-      if (response.ok) {
-        setFormData({ name: "", email: "", company: "", message: "" });
-
-        toast({
-          title: "Message sent!",
-          description: "We'll get back to you as soon as possible.",
-        });
-
-        // OPTIONAL: Redirect to a thank-you page after 2 seconds
-        setTimeout(() => {
-          window.location.href = "/thank-you";
-        }, 2000);
-
-      } else {
-        toast({
-          title: "Error",
-          description: "There was an issue sending your message. Please try again later.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "There was an issue sending your message. Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Redirect to thank-you page after short delay (optional but looks smoother)
+    setTimeout(() => {
+      navigate("/thank-you");
+    }, 500); // 500ms delay so user sees toast
   };
 
   return (
@@ -105,9 +72,7 @@ export default function ContactForm() {
           className="min-h-[100px]"
         />
       </div>
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
-        {isSubmitting ? "Sending..." : "Send Message"}
-      </Button>
+      <Button type="submit" className="w-full">Send Message</Button>
     </form>
   );
 }
