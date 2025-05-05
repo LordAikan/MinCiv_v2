@@ -13,9 +13,11 @@ export default function ContactForm() {
     company: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     // Prepare FormData for Formspree
     const formPayload = new FormData();
@@ -34,11 +36,18 @@ export default function ContactForm() {
       });
 
       if (response.ok) {
+        setFormData({ name: "", email: "", company: "", message: "" });
+
         toast({
           title: "Message sent!",
           description: "We'll get back to you as soon as possible.",
         });
-        setFormData({ name: "", email: "", company: "", message: "" });
+
+        // OPTIONAL: Redirect to a thank-you page after 2 seconds
+        setTimeout(() => {
+          window.location.href = "/thank-you";
+        }, 2000);
+
       } else {
         toast({
           title: "Error",
@@ -52,6 +61,8 @@ export default function ContactForm() {
         description: "There was an issue sending your message. Please try again later.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -94,7 +105,9 @@ export default function ContactForm() {
           className="min-h-[100px]"
         />
       </div>
-      <Button type="submit" className="w-full">Send Message</Button>
+      <Button type="submit" className="w-full" disabled={isSubmitting}>
+        {isSubmitting ? "Sending..." : "Send Message"}
+      </Button>
     </form>
   );
 }
