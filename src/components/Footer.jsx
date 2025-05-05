@@ -20,7 +20,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-2">
               <p className="text-muted-foreground">Email: info@minciv.com</p>
-              <p className="text-muted-foreground">Phone: +1 (555) 123-4567</p>
+              <p className="text-muted-foreground">Phone: +1 (705) 507-0118</p>
             </div>
           </div>
 
