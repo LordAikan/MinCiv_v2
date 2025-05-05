@@ -30,21 +30,25 @@ const teamMembers = [
     name: "Roberto Alvarez",
     role: "Ventilation Specialist",
     description: "15 years of experience in underground mine ventilation, specializing in design, management, and commissioning worldwide. Expert in 3D modeling, dust suppression, and HVAC systems.",
-    image: "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/6c247fcd6cec9597d18e21dc53e9095b.png"
+    image: "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/6c247fcd6cec9597d18e21dc53e9095b.png",
+    linkedin: "https://www.linkedin.com/in/roberto-alvarez-b2b34721/"
   },
   {
     name: "Jose Llanca",
     role: "Mining Specialist",
     description: "Over 13 years of experience in mine ventilation and environmental control. Pioneer in CFD tools for airflow simulations and expertise in ventilation surveys.",
-    image: "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/4e675dcc2c1e918807698fb9fed5138c.png"
+    image: "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/4e675dcc2c1e918807698fb9fed5138c.png",
+    linkedin: "https://www.linkedin.com/in/jos%C3%A9-luis-llanca-pacheco-a2b4b061/"
   },
   {
     name: "Gian Scappaticcio",
     role: "Civil Mining Engineer",
     description: "13 years of experience in civil and structural tunnel design. Specialist in large, technically complex international projects and underground works.",
-    image: "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/8a5bb82a04bcb8dd9d7bd65404ba6bfa.png"
+    image: "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/8a5bb82a04bcb8dd9d7bd65404ba6bfa.png",
+    linkedin: "https://www.linkedin.com/in/gian-scappaticcio-6aaa214a/"
   }
 ];
+
 
 const services = [
   {
