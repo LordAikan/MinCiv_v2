@@ -22,12 +22,15 @@ export default function Footer() {
               <p className="text-muted-foreground">
   Email:{" "}
   <a
-    href="mailto:info@mvcconsulting.ca"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@mvcconsulting.ca"
+    target="_blank"
+    rel="noopener noreferrer"
     className="text-primary hover:underline"
   >
     info@mvcconsulting.ca
   </a>
 </p>
+
 
               <p className="text-muted-foreground">Phone: +1 (705) 507-0118</p>
             </div>
