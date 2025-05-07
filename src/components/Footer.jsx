@@ -19,7 +19,16 @@ export default function Footer() {
           <div className="text-left">
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-2">
-              <p className="text-muted-foreground">Email: info@mvcconsulting.ca</p>
+              <p className="text-muted-foreground">
+  Email:{" "}
+  <a
+    href="mailto:info@mvcconsulting.ca"
+    className="text-primary hover:underline"
+  >
+    info@mvcconsulting.ca
+  </a>
+</p>
+
               <p className="text-muted-foreground">Phone: +1 (705) 507-0118</p>
             </div>
           </div>
