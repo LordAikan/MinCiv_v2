@@ -18,11 +18,11 @@ const fadeIn = {
 };
 
 const customerLogos = [
-  "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/de9b8b37a6b007b861e320fea1dafee6.png",
-  "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/659e56cc114e9415831908d033590827.png",
-  "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/4a30a77f7ba7f6595bfc0442116ff0c4.png",
-  "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/566f443e5303f6c0e3d7d835aac72129.png",
-  "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/266e156281c9e4163fb91ea1e13c3b96.png"
+  "Logos/Logo_1.png",
+  "Logos/Logo_2.png",
+  "/Logos/Logo_3.png",
+  "/Logos/Logo_4.png",
+  "/Logos/Logo_5.png",
 ];
 
 const teamMembers = [
@@ -30,21 +30,21 @@ const teamMembers = [
     name: "Roberto Alvarez",
     role: "Ventilation Specialist",
     description: "15 years of experience in underground mine ventilation, specializing in design, management, and commissioning worldwide. Expert in 3D modeling, dust suppression, and HVAC systems.",
-    image: "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/6c247fcd6cec9597d18e21dc53e9095b.png",
+    image: "/Logos/Roberto.png",
     linkedin: "https://www.linkedin.com/in/roberto-alvarez-b2b34721/"
   },
   {
     name: "Jose Llanca",
     role: "Mining Specialist",
     description: "Over 13 years of experience in mine ventilation and environmental control. Pioneer in CFD tools for airflow simulations and expertise in ventilation surveys.",
-    image: "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/4e675dcc2c1e918807698fb9fed5138c.png",
+    image: "/Logos/Jose.png",
     linkedin: "https://www.linkedin.com/in/jos%C3%A9-luis-llanca-pacheco-a2b4b061/"
   },
   {
     name: "Gian Scappaticcio",
     role: "Civil Mining Engineer",
     description: "13 years of experience in civil and structural tunnel design. Specialist in large, technically complex international projects and underground works.",
-    image: "https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/8a5bb82a04bcb8dd9d7bd65404ba6bfa.png",
+    image: "/Logos/Gian.png",
     linkedin: "https://www.linkedin.com/in/gian-scappaticcio-6aaa214a/"
   }
 ];
@@ -145,12 +145,12 @@ export default function App() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <img 
-              src="https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/13ffdce264c21df80bb84e0011614836.webp"
+              src="/Logos/vent-2.webp"
               alt="Mining ventilation equipment"
               className="w-full h-[400px] object-cover rounded-lg"
             />
             <img 
-              src="https://storage.googleapis.com/hostinger-horizons-assets-prod/49e0f8c4-5ba5-4d19-9d94-b238dea397ec/31293c1f84a7f702cad64b368c412867.jpg"
+              src="/Logos/Fondo1.jpg"
               alt="Underground mining operations"
               className="w-full h-[400px] object-cover rounded-lg"
             />
