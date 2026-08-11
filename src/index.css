@@ -1,4 +1,10 @@
-
+@font-face {
+  font-family: "Balisong";
+  src: url("/fonts/Balisong-Ultra.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,4 +50,6 @@
 .hero-gradient {
   background: radial-gradient(circle at top center, rgba(67, 56, 202, 0.12) 0%, rgba(0, 0, 0, 0) 50%);
 }
-
+.font-balisong {
+  font-family: "Balisong", sans-serif;
+}
