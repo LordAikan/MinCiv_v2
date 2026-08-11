@@ -91,7 +91,7 @@ export default function App() {
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link to="home" smooth={true} duration={500}>
-              <h1 className="text-3xl gradient-text cursor-pointer font-balisong">MVC Consulting</h1>
+              <h1 className="text-3xl gradient-text cursor-pointer font-balisong">MVC</h1>
             </Link>
             <div className="hidden md:flex space-x-6">
               <Link to="services" smooth={true} duration={500}>
