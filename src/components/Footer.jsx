@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Copyright */}
           <div>
-            <h2 className="text-2xl font-bold gradient-text mb-2">MVC Consulting</h2>
+            <h2 className="text-3xl gradient-text cursor-pointer font-balisong">MVC</h2>
             <p className="text-muted-foreground">Mining Ventilation Specialists</p>
           </div>
 
